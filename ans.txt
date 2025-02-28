@@ -1,6 +1,12 @@
-    data
-0  apple
-1   desk
-2  table
-3  roach
-4  scarf
+data;file1.txt;file2.txt;file3.txt
+apple;yes;no;yes
+daily;no;no;yes
+desk;yes;no;yes
+hourglass;no;no;yes
+laser;no;yes;yes
+pan;no;yes;no
+roach;yes;no;yes
+scarf;yes;no;no
+show;no;yes;yes
+table;yes;yes;no
+temperature;no;yes;yes
