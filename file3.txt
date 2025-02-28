@@ -1,0 +1,9 @@
+data
+roach
+daily
+desk
+show
+laser
+temperature
+hourglass
+apple

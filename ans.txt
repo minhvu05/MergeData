@@ -1,0 +1,6 @@
+    data
+0  apple
+1   desk
+2  table
+3  roach
+4  scarf

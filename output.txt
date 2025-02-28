@@ -1,0 +1,12 @@
+data;file1;file2;file3
+apple;yes;no;yes
+desk;yes;no;yes
+laser;no;yes;yes
+roach;yes;no;yes
+show;no;yes;yes
+table;yes;yes;no
+temperature;no;yes;yes
+daily;no;no;yes
+hourglass;no;no;yes
+pan;no;yes;no
+scarf;yes;no;no

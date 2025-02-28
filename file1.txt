@@ -1,0 +1,6 @@
+data
+apple
+desk
+table
+roach
+scarf
