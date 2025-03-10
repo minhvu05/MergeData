@@ -3,9 +3,9 @@ import glob
 
 def merge_data(file1, file2, file3, ans_file):
     # Creating dataframes from given text files
-    df1 = pd.read_csv('file1.txt', header=None, names=['word'])
-    df2 = pd.read_csv('file2.txt', header=None, names=['word'])
-    df3 = pd.read_csv('file3.txt', header=None, names=['word'])
+    df1 = pd.read_csv('file1.txt', header=None, names=['word']).drop_duplicates()
+    df2 = pd.read_csv('file2.txt', header=None, names=['word']).drop_duplicates()
+    df3 = pd.read_csv('file3.txt', header=None, names=['word']).drop_duplicates()
 
     # Add columns to show  which word came from which file
     df1['file1'] = 'yes'
@@ -25,18 +25,17 @@ def merge_data(file1, file2, file3, ans_file):
     merged_df['count'] = merged_df[['file1', 'file2', 'file3']].apply(lambda row: row == 'yes', axis=1).sum(axis=1)
 
     # Formatting the dataframe
-    merged_df = merged_df[['word', 'file1', 'file2', 'file3']]
-    merged_df.columns = ['data', file1, file2, file3]
+    merged_df = merged_df[['word', 'file1', 'file2', 'file3', 'count']]
+    merged_df.columns = ['data', file1, file2, file3, 'count']
 
-    # Brute Force remove the data row
-    merged_df = merged_df[~((merged_df['data'] == 'data') & 
-                                      (merged_df[file1] == 'yes') & 
-                                      (merged_df[file2] == 'yes') & 
-                                      (merged_df[file3] == 'yes'))]
+    # More efficient way to remove data as one of the possible items
+    merged_df = merged_df[merged_df['data'] != 'data']
 
+
+    # ; to separate each column
     merged_df.to_csv(ans_file, index=False, sep=';', header=True)
 
   
 
-merge_data("file1.txt", "file2.txt", "file3.txt", "ans.txt")
+merge_data("file1.txt", "file2.txt", "file3.txt", "output.txt")
 
