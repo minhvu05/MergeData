@@ -4,3 +4,4 @@ show
 laser
 temperature
 pan
+apple

@@ -31,6 +31,9 @@ def merge_data(file1, file2, file3, ans_file):
     # More efficient way to remove data as one of the possible items
     merged_df = merged_df[merged_df['data'] != 'data']
 
+    # Sorting y/n by count
+    merged_df = merged_df.sort_values('count', ascending = False)
+
 
     # ; to separate each column
     merged_df.to_csv(ans_file, index=False, sep=';', header=True)
